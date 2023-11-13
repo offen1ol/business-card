@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+:root {
+    --card: rgb(252, 252, 220, 70%);
+    --card-section: rgb(252, 252, 220);
+    --background: rgb(87, 89, 145);
+    --accent: rgb(34, 84, 112);
+}
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+.flex-container {
+    display: flex;
+}
+
+html {
+    background-color: var(--background);
+    background-image: url("../assets/background.jpg"); 
+    background-size: cover;
+}
+
+body {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+main,
+section {
+    padding: 2%;
+}
+
+main {
+    background-color:var(--card);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.332);
+    border-radius: 6% / 10%;
+    box-shadow: .5rem .75rem rgb(0, 0, 0, 10%);
+    flex-direction: row-reverse;
+    min-height: 70vh;
+    max-width: 80vw;
+}
+
+section {
+    width: 33.3333%;
+}
+
+.card-info {
+    background-color: var(--card-section);
+    border-radius: 10% / 6%;
+}
+
+/* card image */
+.card-img {
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+img {
+    border-radius: 38% 62% 54% 46% / 28% 57% 43% 72%;
+    width: 100%;
+    max-height: 500px;
+    transition: border-radius 2s ease-in-out;
+}
+
+img:hover {
+    border-radius: 69% 31% 65% 35% / 69% 77% 23% 31%; 
+}
+
+#socials-info ul {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* right card */
+.right-card {
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.right-card h4 {
+    margin-bottom: 5px;
+}
+
+.right-card li {
+    text-indent: 1rem;
+    margin-top: 5px;
+}
+
+.right-card li::before {
+    content: '✦';
+    margin-right: 5px;
+}
+
+/* left card */
+.left-card {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-card h1 {
+    font-size: 2rem;
+}
+
+#exhibition-info > span, 
+h3 {
+    display: block;
+    font-size: .9rem;
+    margin: 5px 0;
+    
+}
+
+#date-window {
+    flex-direction: row; 
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+#date-window > span,
+i {
+    font-size: 1.5rem;
+}
+
+#time-window {
+    flex-direction: column;
+    font-size: .75rem;
+}
+
+#ticket-link {
+    display: block;
+    font-family: "Pinyon Script", 'Times New Roman', Times, serif;
+    font-size: 1.75rem;
+}
+
+.contact {
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.contact i {
+    font-size: 1rem;
+}
+
+#ticket-link,
+h1 {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-family: "Pinyon Script", 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    padding: 10px 0 5px 0;
+    border-bottom: 2px solid black;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+#exhibition-info > span,
+h2, 
+h3,
+h4 {
+    font-weight: 700;
+}
+ 
+p {
+    margin: 20px 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: color 500ms;
+}
+
+a:hover {
+    color: var(--accent);
+}
+@media screen and (max-width: 1024px) {
+    main {
+        min-height: 50vh;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    main {
+        flex-direction: column;
+        max-height: 95vh;
+        min-height: 50vh;
+        border-radius: 5% / 2%;
+    }
+
+    .card-info, 
+    .card-img {
+        width: 100%;
+        border-radius: 2%;
+    }
+
+    .right-card ul {
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-around;
+
+    }
+
+    .right-card li {
+        text-indent: 0;
+    }
+
+    .card-img {
+        margin: 10px 0;
+    }
+
+    img {
+        /* display: none; */
+        max-width: 200px;
+        margin: 5px auto 0 auto;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    h2,
+    #ticket-link {
+        margin: 10px 0;
+    }
+
+    p {
+        display: none;
+    }
+}
+
+@media screen and (max-height: 775px) {
+    main {
+        max-height: 99vh;
+    }
+
+    .right-card ul,
+    h4 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    main {
+        border-radius: 3% / 2%;
+        min-height: 20vh;
+    }
+
+    .card-info {
+        border-radius: 2% / 3%;
+    }
+
+    .right-card ul,
+    h4 {
+        display: none;
+    }
+
+    img {
+        max-width: 100px;
+    }
+
+    #date-window > span {
+        font-size: 1.25rem;
+    }
+}
